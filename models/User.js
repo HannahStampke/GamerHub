@@ -74,8 +74,17 @@ User.init(
     freezeTableName: true,
     underscored: true,
     modelName: "user",
+    hooks: {
+      beforeCreate(user) {
+        const salt = bcrypt.genSaltSync();
+        user.password = bcrypt.hashSync(user.password, salt);
+      } 
+    }
   }
 );
 
+User.prototype.validPassword = function (password) {
+  return bcrypt.compareSync(password, this.password);
+}
 
 module.exports = User;
