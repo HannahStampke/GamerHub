@@ -1,14 +1,23 @@
 require("dotenv").config();
 // load mysql2 module
-const mysql = require("mysql2");
+const Sequelize = require('sequelize');
 
 // create database connection 
-const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-});
+let sequelize;
 
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+      host: 'localhost',
+      dialect: 'mysql',
+      port: 3306
+    }
+  );
+}
 // return the connection promise
-module.exports = pool.promise();
+module.exports = sequelize;
