@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection.js");
 
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 
 class User extends Model {}
 
@@ -69,22 +69,35 @@ User.init(
     },
   },
   {
+    hooks: {
+      beforeBulkCreate: async (newUserData) => {
+
+        for (let user of newUserData){
+          user.password = await bcrypt.hash(user.password, 10)
+        }
+
+        return newUserData;
+      },
+
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      beforeUpdate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      }
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "user",
-    hooks: {
-      beforeCreate(user) {
-        const salt = bcrypt.genSaltSync();
-        user.password = bcrypt.hashSync(user.password, salt);
-      } 
-    }
   }
 );
 
 User.prototype.validPassword = function (password) {
-  return bcrypt.compareSync(password, this.password);
+  return bcrypt.compare(password, this.password);
 }
 
 module.exports = User;
