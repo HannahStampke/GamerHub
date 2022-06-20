@@ -23,6 +23,9 @@ Game.init(
         key: "id",
       },
     },
+    filename: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,

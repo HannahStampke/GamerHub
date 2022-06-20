@@ -22,7 +22,7 @@ const postData = [
     {
         post_text: "I'm playing Fortnite for the first time.",
         user_id: 2,
-        game_id: 1,
+        game_id: 3,
         platform_id: 2,
         session_time: '2022-01-01T12:00:00.000Z',
         gamer_level: "intermediate",
