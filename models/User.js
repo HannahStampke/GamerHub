@@ -3,7 +3,11 @@ const sequelize = require("../config/connection.js");
 
 const bcrypt = require("bcrypt");
 
-class User extends Model {}
+class User extends Model {
+  validPassword(password) {
+    return bcrypt.compareSync(password, this.password);
+  }
+}
 
 User.init(
   {
@@ -55,18 +59,6 @@ User.init(
     xbox_id: {
       type: DataTypes.STRING,
     },
-    steam_id: {
-      type: DataTypes.STRING,
-    },
-    origin_id: {
-      type: DataTypes.STRING,
-    },
-    uplay_id: {
-      type: DataTypes.STRING,
-    },
-    battlenet_id: {
-      type: DataTypes.STRING,
-    },
   },
   {
     hooks: {
@@ -96,8 +88,8 @@ User.init(
   }
 );
 
-User.prototype.validPassword = function (password) {
-  return bcrypt.compare(password, this.password);
-}
+// User.prototype.validPassword = function (password) {
+//   return bcrypt.compareSync(password, this.password);
+// }
 
 module.exports = User;
