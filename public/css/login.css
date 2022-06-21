@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
 
-.row {
-    display: flex;
-  flex-direction: row;
-  /* Centers along the main axis determined by flex-direction */
-  justify-content:space-evenly;
-  /* Centers along the opposite axis */
-}
+
 body {
     font-family: "Nunito", sans-serif;
     color: rgba(#000, 0.7);
@@ -26,10 +20,25 @@ body {
         background-position: 0% 50%;
     }
 }
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Nunito", sans-serif;
     color: #ffa500;
 }
+
+.content {
+    display: flex;
+  flex-direction: row;
+  /* Centers along the main axis determined by flex-direction */
+  justify-content:space-evenly;
+  /* Centers along the opposite axis */
+}
+
 .register-form form,
 .login-form form {
     width: 220px;
@@ -65,7 +74,8 @@ h1, h2, h3, h4, h5, h6 {
 a {
     outline: none;
 }
-.register_button {
+.register_button,
+.homepage_button {
     width: 149px;
     height: 42px;
     background-color: #ffa500;
@@ -88,27 +98,35 @@ a {
     clear: both;
 }
 .register_button:hover,
-.login_button:hover {
+.login_button:hover,
+.homepage_button:hover {
     background-color: #fff;
     color: #ffa500;
 }
 .register_button span,
+.homepage_button,
 .login_button span {
     font-weight: normal;
     font-size: 28px;
     line-height: 40px;
 }
 .register_button span a,
-.login_button span a {
+.homepage_button,
+.login_button span a,
+.homepage_button span a {
     text-decoration: none;
     color: #fff;
 }
 .register_button span a:hover,
-.login_button span a:hover  {
+.login_button span a:hover,
+.homepage_button span a:hover {
     background-color: #fff;
     color: #ffa500;
 }
 
+.homepage_button {
+    margin-right: 100px;
+}
 .error {
     display: none;
 }
