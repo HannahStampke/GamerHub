@@ -31,4 +31,4 @@ const editProfile = async () => {
   }
 };
 
-document.querySelector("#edit-profile").addEventListener("click", editProfile);
+document.querySelector("#edit-profile-form").addEventListener("submit", editProfile);
