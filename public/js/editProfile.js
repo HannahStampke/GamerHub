@@ -6,8 +6,8 @@ const editProfile = async () => {
   const psn_id = document.getElementById("psn_id").value;
   const xbox_id = document.getElementById("xbox_id").value;
 
-  const response = await fetch("/api/users/edit", {
-    method: "POST",
+  const response = await fetch("/api/users", {
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
