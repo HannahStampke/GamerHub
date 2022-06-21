@@ -1,0 +1,79 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login - GamerHub</title>
+  <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+  
+
+  <div class="row">
+
+
+    <div class="Login-form">
+      <h1>Login</h1>
+
+      <form class="form login-form">
+              <div class="form-group">
+          <label for="Username-login">Username</label>
+          <input class="form-input" type="Username" id="Username-login" />
+        </div>
+        <div class="form-group">
+          <label for="password-login">password</label>
+          <input class="form-input" type="password" id="password-login" />
+        </div>
+        <div class="form-group">
+          <label for="email-login">email</label>
+          <input class="form-input" type="text" id="email-login" />
+        </div>
+        <div class="login_button"><span><a href="#">LOGIN</a></span></div>
+
+      </form>
+    </div>
+
+
+    <div class="register-form">
+      <h1>New Gamer</h1>
+
+      <form class="form register-form">
+        <div class="form-group">
+          <label for="Username-register">Username</label>
+          <input class="form-input" type="text" id="Username-register" />
+        </div>
+        <div class="form-group">
+          <label for="email-register">email</label>
+          <input class="form-input" type="text" id="email-register" />
+          <p class="error"><span>This email exists already in the database.</span></p>
+        </div>
+        <div class="form-group">
+          <label for="password-register">password</label>
+          <input class="form-input" type="password" id="password-register" /><p class="error"><span>At least 8 characters.</span></p>
+        </div>
+        <!-- {{!-- profile pic --}} -->
+        <div class="form-group">
+          <label for="Games-register">Games</label>
+          <select name="Games"  type="Games" id="Games-register" >       
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option></select> 
+        </div>
+      <!-- platform with options -->
+        <div class="form-group">
+          <label for="Platform-register">Platform</label>
+          <select name="Platforms" type="Platform" id="Platform-register">
+            <option value="PS5">PS5</option>
+            <option value="Xbox Series X">Xbox Series X</option>
+            <option value="PS4">PS4</option>
+            <option value="Xbox One">Xbox One</option>
+            <option value="Switch">Switch</option>
+            <option value="PC">PC</option></select>
+        </div>
+        <div class="register_button"><span><a href="#">REGISTER</a></span></div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/login.js"></script>
+
+
