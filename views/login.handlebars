@@ -1,62 +1,79 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login - GamerHub</title>
+  <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+  
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Login</button>
-      </div>
-    </form>
+  <div class="row">
+
+
+    <div class="Login-form">
+      <h1>Login</h1>
+
+      <form class="form login-form">
+              <div class="form-group">
+          <label for="Username-login">Username</label>
+          <input class="form-input" type="Username" id="Username-login" />
+        </div>
+        <div class="form-group">
+          <label for="password-login">password</label>
+          <input class="form-input" type="password" id="password-login" />
+        </div>
+        <div class="form-group">
+          <label for="email-login">email</label>
+          <input class="form-input" type="text" id="email-login" />
+        </div>
+        <div class="login_button"><span><a href="#">LOGIN</a></span></div>
+
+      </form>
+    </div>
+
+
+    <div class="register-form">
+      <h1>New Gamer</h1>
+
+      <form class="form register-form">
+        <div class="form-group">
+          <label for="Username-register">Username</label>
+          <input class="form-input" type="text" id="Username-register" />
+        </div>
+        <div class="form-group">
+          <label for="email-register">email</label>
+          <input class="form-input" type="text" id="email-register" />
+          <p class="error"><span>This email exists already in the database.</span></p>
+        </div>
+        <div class="form-group">
+          <label for="password-register">password</label>
+          <input class="form-input" type="password" id="password-register" /><p class="error"><span>At least 8 characters.</span></p>
+        </div>
+        <!-- {{!-- profile pic --}} -->
+        <div class="form-group">
+          <label for="Games-register">Games</label>
+          <select name="Games"  type="Games" id="Games-register" >       
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option></select> 
+        </div>
+      <!-- platform with options -->
+        <div class="form-group">
+          <label for="Platform-register">Platform</label>
+          <select name="Platforms" type="Platform" id="Platform-register">
+            <option value="PS5">PS5</option>
+            <option value="Xbox Series X">Xbox Series X</option>
+            <option value="PS4">PS4</option>
+            <option value="Xbox One">Xbox One</option>
+            <option value="Switch">Switch</option>
+            <option value="PC">PC</option></select>
+        </div>
+        <div class="register_button"><span><a href="#">REGISTER</a></span></div>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
 
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">Name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Signup</button>
-      </div>
-      {{! New div for display picture}}
-      <div class="form-group">
-            <label for="display-picture">Choose a display picture!</label>
-            <input class="form-group" type="image" id="display-picture" />
-      </div>
-       {{! New div for games list}}
-      <div class="form-group">
-            <label for="games-list">What games do you play?</label>
-            <input class="form-group" type="checkbox" id="games-list" />
-      </div>
-       {{! New div for platform choice}}
-      <div class="form-group">
-            <label for="platform-choice">Gaming platform</label>
-            <input class="form-group" type="checkbox" id="platform-choice" />
-      </div>
-       {{! New div for social links}}
-      <div class="form-group">
-            <label for="social-links">What are your social handles?</label>
-            <input class="form-group" type="text" id="social-links" />
-      </div>
-    </form>
-  </div>
-</div>
+  <script src="./js/login.js"></script>
 
-<script src="./js/login.js"></script>
+
