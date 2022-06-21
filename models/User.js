@@ -59,6 +59,9 @@ User.init(
     xbox_id: {
       type: DataTypes.STRING,
     },
+    steam_id: {
+      type: DataTypes.STRING,
+    },
   },
   {
     hooks: {

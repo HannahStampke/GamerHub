@@ -21,7 +21,7 @@
 
     <form class="form signup-form">
       <div class="form-group"> {{! username}}
-        <label for="name-signup">Name:</label>
+        <label for="name-signup">Username:</label>
         <input class="form-input" type="text" id="name-signup" />
       </div>
       <div class="form-group">
@@ -35,25 +35,32 @@
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Signup</button>
       </div>
-      {{! New div for display picture}} 
-      <div class="form-group"> {{!platform dropdown - check platform-seeds}}
-            <label for="display-picture">Choose a display picture!</label>
-            <input class="form-group" type="image" id="display-picture" />
+      {{!platform -dropdown- check platform-seeds}} 
+      <div class="dropdown form-group"> 
+            <button onclick="myFunction()" class="dropbtn" for="platform">Choose your platform!</button>
+            <div class="dropdown-content form-group" id="platform" />
+              <a href="#pc">PC</a>
+              <a href="#playstation">Playstation</a>
+              <a href="#xbox">Xbox</a>
+              <a href="#nintendo">Nintendo</a>
+              <a href="#other">Other</a>
+            </div>
       </div>
-       {{! New div for games list}}
-      <div class="form-group"> {{! discord text}}
-            <label for="games-list">What games do you play?</label>
-            <input class="form-group" type="checkbox" id="games-list" />
+       {{! New div for discord -text-}}
+      <div class="form-group">
+            <label for="discord-id">What's your Discord ID?</label>
+            <input class="form-group" type="text" id="discord-id" />
       </div>
-       {{! New div for platform choice}}
-      <div class="form-group"> {{! psn id text}}
-            <label for="platform-choice">Gaming platform</label>
-            <input class="form-group" type="checkbox" id="platform-choice" />
+       {{! New div for psn id -text-}}
+      <div class="form-group">
+            <label for="psn-id">What's your PSN ID?</label>
+            <input class="form-group" type="text" id="psn-id" />
       </div>
-       {{! New div for social links}}
-      <div class="form-group"> {{! xbox id text}}
-            <label for="social-links">What are your social handles?</label>
-            <input class="form-group" type="text" id="social-links" />
+       {{! New div for x-box id -text-}}
+      <div class="form-group">
+            <label for="xbox-id">What is your Xbox ID?</label>
+            <input class="form-group" type="text" id="xbox-id" />
+      </div>
       </div>
     </form>
   </div>
