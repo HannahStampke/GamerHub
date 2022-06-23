@@ -39,13 +39,6 @@ User.init(
         isEmail: true,
       },
     },
-    platform_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "platform",
-        key: "id",
-      },
-    },
     discord_id: {
       type: DataTypes.STRING,
     },

@@ -5,14 +5,12 @@ const userData = [
         username: "damien",
         password: "damienpassword",
         email: "damien@email.com",
-        platform_id: 1,
         discord_id: "damien"
     },
     {
         username: "hannah",
         password: "hannahpassword",
         email: "hannah@email.com",
-        platform_id: 2,
         discord_id: "hannah",
         psn_id: "hannah"
     },
@@ -20,14 +18,12 @@ const userData = [
         username: "tim",
         password: "timpassword",
         email: "tim@email.com",
-        platform_id: 3,
         xbox_id: "tim"
     },
     {
         username: "damneet",
         password: "damneetpassword",
         email: "damneet@email.com",
-        platform_id: 5,
         discord_id: "damneet"
     }
 ];
