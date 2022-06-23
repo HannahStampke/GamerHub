@@ -28,7 +28,7 @@ const userData = [
         password: "damneetpassword",
         email: "damneet@email.com",
         platform_id: 5,
-        steam_id: "damneet"
+        discord_id: "damneet"
     }
 ];
 

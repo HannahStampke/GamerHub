@@ -55,18 +55,6 @@ User.init(
     xbox_id: {
       type: DataTypes.STRING,
     },
-    steam_id: {
-      type: DataTypes.STRING,
-    },
-    origin_id: {
-      type: DataTypes.STRING,
-    },
-    uplay_id: {
-      type: DataTypes.STRING,
-    },
-    battlenet_id: {
-      type: DataTypes.STRING,
-    },
   },
   {
     hooks: {
