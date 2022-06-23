@@ -9,3 +9,7 @@
     height: 4px;
     border-radius: 30%;
 }
+
+.post-container{
+    text-decoration: none;
+}
