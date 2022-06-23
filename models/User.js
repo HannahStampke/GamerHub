@@ -3,7 +3,11 @@ const sequelize = require("../config/connection.js");
 
 const bcrypt = require("bcrypt");
 
-class User extends Model {}
+class User extends Model {
+  validPassword(password) {
+    return bcrypt.compareSync(password, this.password);
+  }
+}
 
 User.init(
   {
@@ -77,8 +81,8 @@ User.init(
   }
 );
 
-User.prototype.validPassword = function (password) {
-  return bcrypt.compare(password, this.password);
-}
+// User.prototype.validPassword = function (password) {
+//   return bcrypt.compareSync(password, this.password);
+// }
 
 module.exports = User;
