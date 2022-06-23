@@ -1,19 +1,17 @@
 
-const createComment = async () => {
+const createComment = async (event) => {
     const commentText = document.getElementById("commentText").value;
-    const username = document.getElementById("username").value;
-    const timeOfComment = document.getElementById(" ").value;
+    const postId = event.target.postId;
     
 
-    const response = await fetch(`/api/posts/${postId}`, {
+    const response = await fetch(`/api/comments/${postId}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            user_name: username,
-            time_of_comment: timeOfComment,
             comment_text: commentText,
+            post_id: postId,
         }),
     })
 
