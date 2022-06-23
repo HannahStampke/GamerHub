@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Call of Duty Warzone</title>
     <link href="../../sass/css/main.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="font-awesome.min.css" />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-light">
@@ -64,11 +67,83 @@
             </div>
           </div>
           <div class="col-md-8 col-12">
-            
+            <form class="w-75 mx-auto my-3">
+              <div class="form-floating my-1">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="post_text"
+                  placeholder="Post Content"
+                  required
+                />
+                <label for="post_text">Post Content*</label>
+              </div>
+              <div class="form-group my-1">
+                <label for="platform_id">Select Platform:</label>
+                <select class="form-control" id="platform_id">
+                  <option>PC</option>
+                  <option>Playstation</option>
+                  <option>Xbox</option>
+                  <option>Nintendo</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <label for="datetimepicker1Input">Date and Time</label>
+
+              <div class="form-floating my-1">
+                <input type="datetime-local" class= "form-control" id="meeting-time" name="meeting-time" value="">
+              </div>
+              
+              <div class="form-group my-1">
+                <label for="platform_id">Gamer Level:</label>
+                <select class="form-control" id="platform_id">
+                  <option>Casual</option>
+                  <option>Intermediate</option>
+                  <option>Semi-pro</option>
+                  <option>Pro</option>
+                </select>
+              </div>
+              <div class="form-group my-1">
+                <label for="platform_id">Intensity:</label>
+                <select class="form-control" id="platform_id">
+                  <option>Chill</option>
+                  <option>Moderate</option>
+                  <option>Sweaty</option>
+                  <option>E-Sports</option>
+                </select>
+              </div>
+
+              
+
+              <button class="w-100 btn btn-lg btn-primary my-3 btn-success" type="submit">
+                Post
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </main>
+
+    <!-- Popperjs -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Tempus Dominus JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@v6-alpha1.0.4/dist/js/tempus-dominus.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Tempus Dominus Styles -->
+    <link
+      href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@v6-alpha1.0.4/dist/css/tempus-dominus.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
@@ -84,5 +159,13 @@
       integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const picker = new tempusdominus.TempusDominus(
+        document.getElementById("datetimepicker1")
+      );
+    </script>
+
+    <script src="script.js"></script>
   </body>
 </html>
