@@ -31,10 +31,10 @@ router.get("/:id", async (req, res) => {
 
         const post = await postData.get({plain: true});
 
-        res.render('newComment', {post, logged_in: req.session.logged_in})
+        res.render('post', {post, logged_in: req.session.logged_in})
 
     } catch (error) {
-        res.status(400).json(error)
+        res.status(400).json({error, message: "Error getting post data"});
     }
 })
 
