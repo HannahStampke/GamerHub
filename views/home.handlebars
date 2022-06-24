@@ -26,7 +26,7 @@
     {{#each games as |game|}}
     {{> game-details}}
     {{/each}}
-    <div class="col"><button class="btn btn-primary m-2">View more games</button></div>
+    <div class="col"><button class="btn btn-primary m-2" id="more-games">View more games</button></div>
   </div>
   {{#if logged_in}}
   {{else}}
@@ -39,3 +39,5 @@
   </div>
   {{/if}}
 </div>
+
+<script src="/js/viewMoreGames.js"></script>
