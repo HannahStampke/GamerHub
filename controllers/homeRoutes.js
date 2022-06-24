@@ -1,9 +1,12 @@
 const router = require("express").Router();
 const { User, Game, Post, Comment, Genre } = require("../models");
 
+const Sequelize = require("sequelize")
+
 router.get('/', async (req, res) => {
     try {
         const gamesData = await Game.findAll({
+            order: Sequelize.literal('rand()') ,
             limit: 4,
             include: [
             {
@@ -39,6 +42,6 @@ router.get('/', async (req, res) => {
     } catch (error) {
         res.status(500).json(error)        
     }
-})
+});
 
 module.exports = router;
