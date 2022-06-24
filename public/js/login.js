@@ -16,14 +16,7 @@ const loginFormHandler = async (event) => {
             document.location.replace('/');
         } else {
             // TODO: bootstrap alert here
-            <script html>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Wrong username or password!</strong> Give it another shot...
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </script>
+            
         }
     }
 };
@@ -53,30 +46,15 @@ const signupFormHandler = async (event) => {
             document.location.replace('/');
         } else {
             // TODO: bootstrap alert here
-            $('button#alertshow').on('click', function() {
-                var msg_type = $("#msgtype").val();
-                ShowAlert(msg_type, 'Message Content', msg_type);
-              });
-            
-            
-              function ShowAlert(msg_title, msg_body, msg_type) {
-                var AlertMsg = $('div[role="alert"]');
-                $(AlertMsg).find('strong').html(msg_title);
-                $(AlertMsg).find('p').html(msg_body);
-                $(AlertMsg).removeAttr('class');
-                $(AlertMsg).addClass('alert alert-' + msg_type);
-                $(AlertMsg).show();
-              }
 
-            // $('.btn.danger').button('toggle').addClass('fat')(response.statusText);
         }
     }
 };
 
 document
-    .querySelector('.login-form')
+    .querySelector('#login-form')
     .addEventListener('submit', loginFormHandler);
 
 document
-    .querySelector('.signup-form')
+    .querySelector('#signup-form')
     .addEventListener('submit', signupFormHandler);

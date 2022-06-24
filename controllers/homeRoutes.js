@@ -34,14 +34,23 @@ router.get('/', async (req, res) => {
 
         const games = gamesData.map((game) => game.get({plain: true}));
         const posts = postData.map((post) => post.get({plain: true}));
+        const userName = req.session.username
 
         // res.status(200).json(posts)
 
-        res.render('home', { games, posts, logged_in: req.session.logged_in });
+        res.render('home', { games, posts, logged_in: req.session.logged_in, userName});
 
     } catch (error) {
         res.status(500).json(error)        
     }
 });
+
+router.get('/login', async (req, res) => {
+    try {
+        res.render('login', {logged_in: req.session.logged_in})
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
 
 module.exports = router;
