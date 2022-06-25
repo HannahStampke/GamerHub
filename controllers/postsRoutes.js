@@ -17,21 +17,23 @@ router.get("/:id", async (req, res) => {
                 {
                     model: Platform
                 },
-                {
-                    model: Comment,
-                    include: [
-                        {
-                            model: User,
-                            attributes: ['username']
-                        }
-                    ]
-                }
             ]
         });
 
-        const post = await postData.get({plain: true});
+        const commentData = await Comment.findAll({
+            where: {post_id: req.params.id},
+            include: [
+                {
+                    model: User
+                }
+            ],
+            order: [['comment_date', 'ASC']]
+        })
 
-        res.render('post', {post, logged_in: req.session.logged_in})
+        const post = await postData.get({plain: true});
+        const comments = await commentData.map((comment) => comment.get({plain: true}))
+
+        res.render('post', {post, comments, logged_in: req.session.logged_in})
 
     } catch (error) {
         res.status(400).json({error, message: "Error getting post data"});

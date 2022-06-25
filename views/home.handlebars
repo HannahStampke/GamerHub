@@ -32,7 +32,6 @@
     {{/if}}
   </div>
   {{#if logged_in}}
-  {{else}}
   <div class="row break"></div>
   <div class="row text-center">
     <h2 class="my-2">Recent posts</h2>
@@ -40,5 +39,6 @@
     {{> post-details}}
     {{/each}}
   </div>
+  {{else}}
   {{/if}}
 </div>
