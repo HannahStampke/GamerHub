@@ -50,12 +50,12 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put('/', withAuth, async (req, res) => {
+router.put('/', async (req, res) => {
   try {
     const user = await User.update(req.body, {
       where: { id: req.session.user_id },
     });
-    res.status(200).json("user updated");
+    res.status(200).json("User edited");
   } catch (error) {
     res.status(400).json(error);
   }

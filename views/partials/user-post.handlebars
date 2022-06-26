@@ -1,0 +1,19 @@
+<div class="col-lg-4 col-md-6 col-12">
+  <div class="card m-2">
+    <div class="card-body">
+      <h5 class="card-title">{{game.game_name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Session Time: {{format_date session_time}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Platform: {{platform.platform_name}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Gamer Level: {{gamer_level}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Intensity: {{intensity}}</h6>
+      <p class="card-text">{{post_text}}</p>
+      <a href="/posts/post_id" class="btn btn-primary">Go To Post</a>
+      <button
+        class="btn btn-danger align-self-end"
+        id="delete-post"
+      >Delete</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/deletePost.js"></script>
