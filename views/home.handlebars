@@ -1,0 +1,44 @@
+{{#if logged_in}}
+<div class="container">
+  <div class="px-4 py-5 my-1 text-center">
+    <h1 class="display-5 fw-bold">Welcome back to GamerHub {{userName}}!</h1>
+  </div>
+</div>
+{{else}}
+<div class="container">
+  <div class="px-4 py-5 my-1 text-center">
+    <h1 class="display-5 fw-bold">Welcome to GamerHub</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Find gamers that are down to play.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a
+          href="/login"
+          class="btn btn-primary btn-lg px-4 gap-3 btn-success"
+        >Join Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+<div class="container-fluid">
+  <div class="row text-center">
+    {{#each games as |game|}}
+    {{> game-details}}
+    {{/each}}
+    {{#if allGames}}
+    {{else}}
+    <div class="col"><a class="btn btn-primary m-2" id="more-games" href="/all-games">View more games</a></div>
+    {{/if}}
+  </div>
+  {{#if logged_in}}
+  <div class="row break"></div>
+  <div class="row text-center">
+    <h2 class="my-2">Recent posts</h2>
+    {{#each posts as |post|}}
+    {{> post-details}}
+    {{/each}}
+  </div>
+  {{else}}
+  {{/if}}
+</div>
