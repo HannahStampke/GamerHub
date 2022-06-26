@@ -87,6 +87,25 @@ router.get('/all-games', async (req, res) => {
     }
 });
 
+router.get('/new-post/:id', withAuth, async (req, res) => {
+    try {
+        const gameData = await Game.findByPk(req.params.id, {
+            include: [{
+                model: Genre
+            }]
+        });
+
+        const game = gameData.get({plain: true});
+
+        res.render('new-post',{game, logged_in: req.session.logged_in,})
+        
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
+
+router.get('/')
+
 
 router.get('/login', async (req, res) => {
     try {
