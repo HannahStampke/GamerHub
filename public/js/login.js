@@ -15,10 +15,14 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            // TODO: bootstrap alert here
-            
+            showloginAlerts()
         }
     }
+};
+
+function showloginAlerts(){
+    document.getElementById('bootstrap-alert-login').style.display = 'block';
+    setTimeout(function(){document.getElementById('bootstrap-alert-login').style.display = 'none'}, 1700);
 };
 
 const signupFormHandler = async (event) => {
@@ -45,11 +49,16 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            // TODO: bootstrap alert here
-
+            showSignupAlerts()
         }
     }
 };
+
+function showSignupAlerts(){
+    document.getElementById('bootstrap-alert-signup').style.display = 'block';
+    setTimeout(function(){document.getElementById('bootstrap-alert-signup').style.display = 'none'}, 1700);
+  };
+
 
 document
     .querySelector('#login-form')
