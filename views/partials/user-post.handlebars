@@ -7,10 +7,11 @@
       <h6 class="card-subtitle mb-2 text-muted">Gamer Level: {{gamer_level}}</h6>
       <h6 class="card-subtitle mb-2 text-muted">Intensity: {{intensity}}</h6>
       <p class="card-text">{{post_text}}</p>
-      <a href="/posts/post_id" class="btn btn-primary">Go To Post</a>
+      <a href="/posts/{{id}}" class="btn btn-primary">Go To Post</a>
       <button
         class="btn btn-danger align-self-end"
         id="delete-post"
+        data-postId="{{id}}"
       >Delete</button>
     </div>
   </div>
