@@ -3,7 +3,7 @@ const { User, Post, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // get user with id and all their posts and comments
-router.get("/",  async (req, res) => {
+router.get("/",  withAuth, async (req, res) => {
   try {
     const user = await User.findByPk(req.session.user_id , {
 
@@ -35,22 +35,7 @@ router.get("/",  async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
-  try {
-    const userData = await User.create(req.body);
-
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(userData);
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-router.put('/', async (req, res) => {
+router.put('/', withAuth, async (req, res) => {
   try {
     const user = await User.update(req.body, {
       where: { id: req.session.user_id },
@@ -60,6 +45,29 @@ router.put('/', async (req, res) => {
     res.status(400).json(error);
   }
 })
+
+router.post("/", async (req, res) => {
+  try {
+    const userData = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+      xbox_id: req.body.xbox_id,
+      psn_id: req.body.psn_id,
+      discord_id: req.body.discord_id
+    });
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      req.session.username = userData.username;
+
+      res.status(200).json({message: "You are in!" });
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 router.post("/login", async (req, res) => {
   try {

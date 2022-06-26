@@ -21,3 +21,7 @@
 .hide{
     display: none;
 }
+
+.game-card{
+    min-height: 318px;
+}

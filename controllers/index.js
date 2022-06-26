@@ -11,5 +11,7 @@ router.use('/posts', postRoutes);
 router.use('/games', gamesRoutes);
 router.use('/api', api);
 
+router.use('*', homeRoutes);
+
 
 module.exports = router;
