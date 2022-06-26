@@ -1,82 +1,101 @@
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login - GamerHub</title>
-  <link rel="stylesheet" href="../public/css/login.css">
-</head>
-<body>
-  <header>
-    <h1>GamerHub</h1>
-    <div class="homepage_button"><span><a href="#">homepage</a></span></div>
-  </header>
-  <hr>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-6 text-center">
+      <form class="w-75 mx-auto my-3" id="login-form">
+        <h1 class="h3 mb-3 fw-normal">Sign in</h1>
 
-  <div class="content">
-
-
-    <div class="Login-form">
-      <h1>Login</h1>
-
-      <form class="form login-form">
-              <div class="form-group">
-          <label for="username-login">username</label>
-          <input class="form-input" type="Username" id="Username-login" />
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="email-login"
+            placeholder="name@example.com"
+          />
+          <label for="email-login">Email address</label>
         </div>
-        <div class="form-group">
-          <label for="password-login">password</label>
-          <input class="form-input" type="password" id="password-login" />
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="password-login"
+            placeholder="Password"
+          />
+          <label for="password-login">Password</label>
         </div>
-        <div class="form-group">
-          <label for="email-login">email</label>
-          <input class="form-input" type="text" id="email-login" />
-        </div>
-        <div class="login_button"><span><a href="#">login</a></span></div>
 
+        <button class="w-100 btn btn-lg btn-primary my-3" type="submit">
+          Sign in
+        </button>
       </form>
     </div>
+    <div class="col-12 col-sm-6 text-center">
+      <form class="w-75 mx-auto my-3" id="signup-form">
+        <h1 class="h3 mb-3 fw-normal">Register</h1>
 
+        <div class="form-floating my-1">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+            required
+          />
+          <label for="email">Email address*</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="username"
+            required
+          />
+          <label for="username">Username*</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <label for="floatingPassword">Password*</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="discord_id"
+            placeholder="Discord"
+          />
+          <label for="discord_id">Discord ID</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="psn_id"
+            placeholder="PSN ID"
+          />
+          <label for="psn_id">Psn ID</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="email"
+            class="form-control"
+            id="xbox_id"
+            placeholder="Xbox ID"
+          />
+          <label for="xbox_id">XBox ID</label>
+        </div>
 
-    <div class="register-form">
-      <h1>New Gamer</h1>
-
-      <form class="form register-form">
-        <div class="form-group">
-          <label for="username-register">username</label>
-          <input class="form-input" type="text" id="username-register" />
-        </div>
-        <div class="form-group">
-          <label for="email-register">email</label>
-          <input class="form-input" type="text" id="email-register" />
-          <p class="error"><span>This email exists already in the database.</span></p>
-        </div>
-        <div class="form-group">
-          <label for="password-register">password</label>
-          <input class="form-input" type="password" id="password-register" /><p class="error"><span>At least 8 characters.</span></p>
-        </div>
-        <div class="form-group">
-          <label for="games-register">games</label>
-          <select name="games"  type="Games" id="games-register" >       
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option></select> 
-        </div>
-      <!-- platform with options -->
-        <div class="form-group">
-          <label for="platform-register">platform</label>
-          <select name="platforms" type="platform" id="platform-register">
-            <option value="PS5">PS5</option>
-            <option value="Xbox Series X">Xbox Series X</option>
-            <option value="PS4">PS4</option>
-            <option value="Xbox One">Xbox One</option>
-            <option value="Switch">Switch</option>
-            <option value="PC">PC</option></select>
-        </div>
-        <div class="register_button"><span><a href="#">register</a></span></div>
-        </div>
+        <button class="w-100 btn btn-lg btn-primary my-3" type="submit">
+          Register
+        </button>
       </form>
     </div>
   </div>
+</div>
 
-  <script src="./js/login.js"></script>
-
-
+<script src="/js/login.js"></script>

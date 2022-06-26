@@ -13,9 +13,10 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/');
         } else {
-            alert(response.statusText);
+            // TODO: bootstrap alert here
+            
         }
     }
 };
@@ -23,35 +24,37 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    const name = document.querySelector('#name-signup').value.trim();
+    // TODO: validate form with login form in login.handlebars
+    const username = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
     // TODO: Added extra const variables for signup information ... DEFINITELY NEED TO CHECK
-    const displayPicture = document.querySelector('#display-picture').value.trim();
-    const games = document.querySelector('#games-list').value.trim();
-    const platform = document.querySelector('platform-choice').value.trim();
-    const socials = document.querySelector('#social-links').value.trim();
+    const platform = document.querySelector('#platform').value.trim();
+    const xbox_id = document.querySelector('#xbox-id').value.trim();
+    const psn_id = document.querySelector('#psn-id').value.trim();
+    const discord_id = document.querySelector('#discord-id').value.trim();
 
-    if (name && email && password) {
+    if (username && email && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ name, email, password }),
+            body: JSON.stringify({ username, email, password, xbox_id, psn_id, discord_id, }), // send all fields from above
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/');
         } else {
-            alert(response.statusText);
+            // TODO: bootstrap alert here
+
         }
     }
 };
 
 document
-    .querySelector('.login-form')
+    .querySelector('#login-form')
     .addEventListener('submit', loginFormHandler);
 
 document
-    .querySelector('.signup-form')
+    .querySelector('#signup-form')
     .addEventListener('submit', signupFormHandler);

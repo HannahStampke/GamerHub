@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {Game, Post, User, Comment} = require('../../models');
+const {Game} = require('../../models');
 
 router.get("/", async (req, res) => {
     try {
@@ -18,36 +18,5 @@ router.post("/", async (req, res) => {
         res.status(400).json(err);
     }
 })
-
-router.get("/:id", async (req, res) => {
-    try {
-        const game = await Game.findByPk(req.params.id, {
-            include: [
-                {
-                    model: Post,
-                    include: [
-                        {
-                            model: User,
-                            attributes: ['username']
-                        },
-                        {
-                            model: Comment,
-                            include: [
-                                {
-                                    model: User,
-                                    attributes: ['username']
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        });
-        res.status(200).json(game);
-    } catch (err) {
-        console.log(err)
-        res.status(400).json(err);
-    }
-});
 
 module.exports = router;
