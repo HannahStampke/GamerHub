@@ -26,6 +26,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
+
                 <a class="nav-link" href="/">Home</a>
               </li>
               {{#if logged_in}}
@@ -40,6 +41,7 @@
                 <a class="nav-link" href="/login">Login</a>
               </li>
               {{/if}}
+
             </ul>
           </div>
         </div>
@@ -48,6 +50,8 @@
     <main class="w-vw">
       {{{body}}}
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
@@ -63,8 +67,12 @@
       integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
       crossorigin="anonymous"
     ></script>
+    
+    
+
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
   </body>
 </html>
+
