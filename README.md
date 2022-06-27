@@ -2,7 +2,7 @@
 
 ![Github](https://img.shields.io/badge/license-MIT-yellow.svg)
 
-### Live URL: 
+### Live URL: https://gamer-hub-group1.herokuapp.com/
 ### Website Screenshots: 
 
 ## User Story 
