@@ -3,7 +3,10 @@
 ![Github](https://img.shields.io/badge/license-MIT-yellow.svg)
 
 ### Live URL: https://gamer-hub-group1.herokuapp.com/
-### Website Screenshots: 
+### Website Screenshots:
+![Homepage of Gamer Hub when the user "damneet" is logged. Showing 4 games that are being talked about currently with a recent posts section below](./assets/images/screenshot1.png)
+
+![Game page for the game League of Legends with all its posts](./assets/images/screenshot2.png)
 
 ## User Story 
 ```md
@@ -16,7 +19,6 @@ SO THAT I can enjoy my gaming experience
 
 Gamerhub is a application for gamers to use to search for teammates to game with.
 Gamerhub hosts a number of different games all with the common feature of online play. With gamerhub the user has the option to search for teammates via game/skill level and time to play.By using Gamerhub, the user is able to connect with likeminded players for long instense gaming sessions. 
-
 
 
 # Table of Contents
@@ -60,6 +62,9 @@ Steps to use our application Gamerhub
 - Once registered, the user can create post by selecting there video game of choice and posting there intensity level and what time they would like to play.
 - Users can comment on other posts been created by fellow Gamerhub users.
 
+Below is the application schema:
+
+![Schema for the gamer_hub database.](./assets/images/schema.png)
 
 # License 
 
@@ -92,8 +97,8 @@ Test locally on [Insomnia](https://insomnia.rest/])
 For any questions and comments please reach out to us through email at:
 - damneet.sambhy@hotmail.com
 - damienjinks39@gmail.com
-- 
-- 
+- hannah.stampke@gmail.com
+- anson242004@hotmail.com
 
 
 # Links
