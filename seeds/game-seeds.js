@@ -49,7 +49,7 @@ const gameData = [
   {
     game_name: "Forza Horizon 5",
     genre_id: 3,
-    filename: 'Forza_Horizon_5_img.jpg',
+    filename: 'Forza_horizon_5_img.jpg',
   },
 ];
 
