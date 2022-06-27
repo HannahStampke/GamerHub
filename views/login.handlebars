@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-6 text-center">
+      <form class="w-75 mx-auto my-3" id="login-form">
+        <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="email-login"
+            placeholder="name@example.com"
+          />
+          <label for="email-login">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="password-login"
+            placeholder="Password"
+          />
+          <label for="password-login">Password</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary my-3" type="submit">
+          Sign in
+        </button>
+      </form>
+      <div class="alert alert-danger" role="alert" style='display:none' id='bootstrap-alert-login'>
+        Name or password are incorrect.      
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 text-center">
+      <form class="w-75 mx-auto my-3" id="signup-form">
+        <h1 class="h3 mb-3 fw-normal">Register</h1>
+
+        <div class="form-floating my-1">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+            required
+          />
+          <label for="email">Email address*</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="username"
+            required
+          />
+          <label for="username">Username*</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <label for="floatingPassword">Password*</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="discord_id"
+            placeholder="Discord"
+          />
+          <label for="discord_id">Discord ID</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="psn_id"
+            placeholder="PSN ID"
+          />
+          <label for="psn_id">Psn ID</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="email"
+            class="form-control"
+            id="xbox_id"
+            placeholder="Xbox ID"
+          />
+          <label for="xbox_id">XBox ID</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary my-3" type="submit">
+          Register
+        </button>
+      </form>
+      <div class="alert alert-danger" role="alert" style='display:none' id='bootstrap-alert-signup'>
+        Please fill in the correct details.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/login.js"></script>

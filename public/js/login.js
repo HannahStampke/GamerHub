@@ -15,20 +15,21 @@ const loginFormHandler = async(event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            // TODO: bootstrap alert here
-            <script html>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Wrong username or password!</strong> Give it another shot...
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </script>
+            showloginAlerts()
         }
     }
 };
 
+<<<<<<< HEAD
 const signupFormHandler = async(event) => {
+=======
+function showloginAlerts(){
+    document.getElementById('bootstrap-alert-login').style.display = 'block';
+    setTimeout(function(){document.getElementById('bootstrap-alert-login').style.display = 'none'}, 1700);
+};
+
+const signupFormHandler = async (event) => {
+>>>>>>> 8bac1ca72d172d0630755a9d9c0a76fb3d5c8f2c
     event.preventDefault();
 
     // TODO: validate form with login form in login.handlebars
@@ -52,31 +53,21 @@ const signupFormHandler = async(event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            // TODO: bootstrap alert here
-            $('button#alertshow').on('click', function() {
-                var msg_type = $("#msgtype").val();
-                ShowAlert(msg_type, 'Message Content', msg_type);
-              });
-            
-            
-              function ShowAlert(msg_title, msg_body, msg_type) {
-                var AlertMsg = $('div[role="alert"]');
-                $(AlertMsg).find('strong').html(msg_title);
-                $(AlertMsg).find('p').html(msg_body);
-                $(AlertMsg).removeAttr('class');
-                $(AlertMsg).addClass('alert alert-' + msg_type);
-                $(AlertMsg).show();
-              }
-
-            // $('.btn.danger').button('toggle').addClass('fat')(response.statusText);
+            showSignupAlerts()
         }
     }
 };
 
+function showSignupAlerts(){
+    document.getElementById('bootstrap-alert-signup').style.display = 'block';
+    setTimeout(function(){document.getElementById('bootstrap-alert-signup').style.display = 'none'}, 1700);
+  };
+
+
 document
-    .querySelector('.login-form')
+    .querySelector('#login-form')
     .addEventListener('submit', loginFormHandler);
 
 document
-    .querySelector('.signup-form')
+    .querySelector('#signup-form')
     .addEventListener('submit', signupFormHandler);

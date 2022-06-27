@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Game, Post, Comment, Genre } = require("../models");
 
+<<<<<<< HEAD
 router.get('/', async(req, res) => {
     try {
         const gamesData = await Game.findAll({
@@ -14,11 +15,101 @@ router.get('/', async(req, res) => {
         });
 
         const games = gamesData.map((game) => game.get({ plain: true }));
+=======
+const Sequelize = require("sequelize")
+
+router.get('/', async (req, res) => {
+    try {
+        const gamesData = await Game.findAll({
+            order: Sequelize.literal('rand()') ,
+            limit: 4,
+            include: [
+            {
+                model: Genre,
+                attributes: ['genre_name']
+            }
+        ],
+        });
 
 
-        res.render('home', { games });
+        const postData = await Post.findAll({
+            limit: 4,
+            order: [['session_time', 'DESC']],
+            include: [
+                {
+                    model: Game,
+                    attributes: ['game_name']
+                },
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
+        })
+
+        const games = gamesData.map((game) => game.get({plain: true}));
+        const posts = postData.map((post) => post.get({plain: true}));
+        const userName = req.session.username
+>>>>>>> 8bac1ca72d172d0630755a9d9c0a76fb3d5c8f2c
+
+        // res.status(200).json(posts)
+
+        res.render('home', { games, posts, logged_in: req.session.logged_in, userName});
 
     } catch (error) {
+<<<<<<< HEAD
+=======
+        res.status(500).json(error)        
+    }
+});
+
+router.get('/all-games', async (req, res) => {
+    try {
+        const gamesData = await Game.findAll({
+            order: Sequelize.literal('rand()') ,
+            include: [
+            {
+                model: Genre,
+                attributes: ['genre_name']
+            }
+        ],
+        });
+
+
+        const postData = await Post.findAll({
+            limit: 4,
+            order: [['session_time', 'DESC']],
+            include: [
+                {
+                    model: Game,
+                    attributes: ['game_name']
+                },
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
+        })
+
+        const allGames = true
+        const games = gamesData.map((game) => game.get({plain: true}));
+        const posts = postData.map((post) => post.get({plain: true}));
+        const userName = req.session.username
+
+
+        res.render('home', { games, posts, logged_in: req.session.logged_in, userName, allGames});
+
+    } catch (error) {
+        res.status(500).json(error)        
+    }
+});
+
+
+router.get('/login', async (req, res) => {
+    try {
+        res.render('login', {logged_in: req.session.logged_in})
+    } catch (error) {
+>>>>>>> 8bac1ca72d172d0630755a9d9c0a76fb3d5c8f2c
         res.status(400).json(error)
     }
 })

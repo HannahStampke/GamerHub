@@ -1,0 +1,66 @@
+<div class="container">
+  <h2 class="text-center m-2">Post</h2>
+  <h4 class="text-center m-2">{{post.game.game_name}}</h4>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-12">
+      <div class="card text-center m-2">
+        <img
+          src="/images/{{post.game.filename}}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div
+          class="card-body d-flex flex-column align-content-center justify-content-center bg-secondary"
+        >
+          <h5 class="card-title">{{post.game.game_name}}</h5>
+          <p class="card-text">{{post.game.genre.genre_name}}</p>
+          <a href="/games/{{post.game.id}}" class="btn btn-primary">Show Posts</a>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-md-8 col-12">
+      <div class="card m-2">
+        <div class="card-body">
+          <h5 class="card-title">{{post.user.username}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Session Time: {{format_date post.session_time}}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">Platform: {{post.platform.platform_name}}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">Gamer Level: {{post.gamer_level}}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">Intensity: {{post.intensity}}</h6>
+          <p class="card-text">{{post.post_text}}</p>
+        </div>
+      </div>
+      
+
+      {{#each comments as |comment|}}
+      {{> comment-details}}
+      {{/each}}
+
+      <h4 class="text-center m-2">Add Comment</h4>
+      <form class="w-75 mx-auto my-3" id="comment-form">
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="comment-text"
+            placeholder="Post Content"
+            required
+          />
+          <label for="comment-text">Comment</label>
+        </div>
+
+        <button
+          class="w-100 btn btn-lg btn-primary my-3 btn-success"
+          type="submit"
+          id="{{post.id}}"
+        >
+          Post
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/newComment.js"></script>
