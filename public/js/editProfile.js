@@ -1,4 +1,5 @@
-const showEditForm = async () => {
+const showEditForm = async (event) => {
+  event.preventDefault();
   const profileBox = document.querySelector("#info-div");
   const formBox = document.querySelector("#form-div");
 
