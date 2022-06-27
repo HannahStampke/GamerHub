@@ -1,10 +1,10 @@
 const showEditForm = async () => {
-  const profileBox = document.querySelector("#info-div")
-  const formBox = document.querySelector("#form-div")
+  const profileBox = document.querySelector("#info-div");
+  const formBox = document.querySelector("#form-div");
 
-  profileBox.classList.add("hide")
-  formBox.classList.remove("hide")
-}
+  profileBox.classList.add("hide");
+  formBox.classList.remove("hide");
+};
 
 const editProfile = async () => {
   const username = document.getElementById("username").value;
@@ -29,15 +29,30 @@ const editProfile = async () => {
 
   if (response.ok) {
     // bootstrap alert user edited
+    showEditPostAlerts();
     // redirect to profile page
-    document.location.replace('/profile')
+    document.location.replace("/profile");
   } else {
     // bootstrap alert for error
+    showErrorAlerts();
     // redirect to profile page
-    alert(response.statusText)
+    document.location.replace("/");
   }
 };
 
 document.querySelector("#edit-form").addEventListener("submit", editProfile);
-document.querySelector("#edit-profile").addEventListener("click", showEditForm)
+document.querySelector("#edit-profile").addEventListener("click", showEditForm);
 
+function showEditPostAlerts() {
+  document.getElementById("bootstrap-alert-edit-post").style.display = "block";
+  setTimeout(function () {
+    document.getElementById("bootstrap-alert-edit-post").style.display = "none";
+  }, 1700);
+}
+
+function showErrorAlerts() {
+  document.getElementById("bootstrap-alert-error").style.display = "block";
+  setTimeout(function () {
+    document.getElementById("bootstrap-alert-error").style.display = "none";
+  }, 1700);
+}
