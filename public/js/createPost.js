@@ -1,10 +1,36 @@
-const createPost = async () => {
-    const postText = document.getElementById("postText").value;
-    const game = document.getElementById("game").value;
-    const platform = document.getElementById("platform").value;
-    const sessionTime = document.getElementById("sessionTime").value;
-    const gamerLevel = document.getElementById("gamerLevel").value;
+const createPost = async (event) => {
+    event.preventDefault();
+    const postText = document.getElementById("post-text").value;
+    const gameId = parseInt(document.location.pathname.split("/")[2]) 
+    let platform = document.getElementById("platform-id").value;
+    const sessionTime = document.getElementById("session-time").value;
+    const gamerLevel = document.getElementById("gamer-level").value;
     const intensity = document.getElementById("intensity").value;
+
+    console.log(postText)
+    console.log(gameId)
+    console.log(sessionTime)
+    console.log(intensity)
+    console.log(gamerLevel)
+    console.log(platform)
+
+    switch (platform) {
+        case "PC":
+            platform = 1
+        break;
+        case "Playstation":
+            platform = 2
+        break;
+        case "Xbox":
+            platform = 3
+        break;
+        case "Nintendo":
+            platform = 4
+        break;
+        case "Other":
+            platform = 5
+        break;
+    }
 
     const response = await fetch("/api/posts", {
         method: "POST",
@@ -13,7 +39,7 @@ const createPost = async () => {
         },
         body: JSON.stringify({
             post_text: postText,
-            game_id: game,
+            game_id: gameId,
             platform_id: platform,
             session_time: sessionTime,
             gamer_level: gamerLevel,
@@ -24,11 +50,11 @@ const createPost = async () => {
     if (response.ok) {
         // bootstrap alert user edited
         // redirect to profile page
+        document.location.replace(`/games/${gameId}`)
     }
     else {
         // bootstrap alert for error
         // redirect to profile page
-        alert(response.statusText)
     }
     
 }

@@ -22,20 +22,20 @@
       </div>
     </div>
     <div class="col-md-8 col-12">
-      <form class="w-75 mx-auto my-3">
+      <form class="w-75 mx-auto my-3" id="create-post-form">
         <div class="form-floating my-1">
           <input
             type="text"
             class="form-control"
-            id="post_text"
+            id="post-text"
             placeholder="Post Content"
             required
           />
-          <label for="post_text">Post Content*</label>
+          <label for="post-text">Post Content*</label>
         </div>
         <div class="form-group my-1">
-          <label for="platform_id">Select Platform:</label>
-          <select class="form-control" id="platform_id">
+          <label for="platform-id">Select Platform:</label>
+          <select class="form-control" id="platform-id">
             <option>PC</option>
             <option>Playstation</option>
             <option>Xbox</option>
@@ -44,21 +44,21 @@
           </select>
         </div>
 
-        <label for="meeting-time">Date and Time</label>
+        <label for="session-time">Date and Time</label>
 
         <div class="form-floating my-1">
           <input
             type="datetime-local"
             class="form-control"
-            id="meeting-time"
-            name="meeting-time"
+            id="session-time"
+            name="session-time"
             value=""
           />
         </div>
 
         <div class="form-group my-1">
-          <label for="platform_id">Gamer Level:</label>
-          <select class="form-control" id="platform_id">
+          <label for="gamer-level">Gamer Level:</label>
+          <select class="form-control" id="gamer-level">
             <option>Casual</option>
             <option>Intermediate</option>
             <option>Semi-pro</option>
@@ -66,8 +66,8 @@
           </select>
         </div>
         <div class="form-group my-1">
-          <label for="platform_id">Intensity:</label>
-          <select class="form-control" id="platform_id">
+          <label for="intensity">Intensity:</label>
+          <select class="form-control" id="intensity">
             <option>Chill</option>
             <option>Moderate</option>
             <option>Sweaty</option>
@@ -85,3 +85,5 @@
     </div>
   </div>
 </div>
+
+<script src="/js/createPost.js"></script>

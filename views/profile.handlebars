@@ -89,13 +89,18 @@
 
           </div>
           <div class="col-md-8 col-12">
-            <div class="row">
+            <div class="row" id="post-row">
                 {{#each posts as |post|}}
                 {{> user-post}}
                 {{/each}}
+                
             </div>
           </div>
         </div>
       </div>
 
       <script src="/js/editProfile.js"></script>
+      {{#if posts}}
+      <script src="/js/deletePost.js"></script>
+      {{/if}}
+      
