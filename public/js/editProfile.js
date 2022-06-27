@@ -29,12 +29,12 @@ const editProfile = async () => {
 
   if (response.ok) {
     // bootstrap alert user edited
-    showEditPostAlerts();
+    // showEditPostAlerts();
     // redirect to profile page
     document.location.replace("/profile");
   } else {
     // bootstrap alert for error
-    showErrorAlerts();
+    // showErrorAlerts();
     // redirect to profile page
     document.location.replace("/");
   }

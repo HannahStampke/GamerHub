@@ -49,12 +49,12 @@ const createPost = async (event) => {
 
   if (response.ok) {
     // bootstrap alert user edited
-    showCreatePostAlerts();
+    // showCreatePostAlerts();
     // redirect to profile page
     document.location.replace(`/games/${gameId}`);
   } else {
     // bootstrap alert for error
-    showErrorAlerts();
+    // showErrorAlerts();
     // redirect to profile page
     document.location.replace("/");
   }

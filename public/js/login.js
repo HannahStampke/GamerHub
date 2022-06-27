@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            showLoginAlerts()
+            // showLoginAlerts()
         }
     }
 };
@@ -48,7 +48,7 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            showSignupAlerts()
+            // showSignupAlerts()
         }
     }
 };

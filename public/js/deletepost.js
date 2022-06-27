@@ -14,10 +14,10 @@ const deletePost = async (button) => {
       document.location.replace("/profile");
     }
 
-    showDeletePostAlerts();
+    // showDeletePostAlerts();
     // catch error
   } catch (error) {
-    showErrorAlerts();
+    // showErrorAlerts();
     console.log("Oh dear... " + error);
   }
 };
