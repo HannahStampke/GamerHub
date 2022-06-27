@@ -35,8 +35,8 @@ const createPost = async () => {
 };
 
 function showCreatePostAlerts(){
-    document.getElementById('bootstrap-alert-signup').style.display = 'block';
-    setTimeout(function(){document.getElementById('bootstrap-alert-signup').style.display = 'none'}, 1700);
+    document.getElementById('bootstrap-alert-create').style.display = 'block';
+    setTimeout(function(){document.getElementById('bootstrap-alert-create').style.display = 'none'}, 1700);
 };
 
 function showErrorAlerts(){

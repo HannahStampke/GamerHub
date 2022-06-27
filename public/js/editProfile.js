@@ -23,12 +23,25 @@ const editProfile = async () => {
 
   if (response.ok) {
     // bootstrap alert user edited
+    showEditPostAlerts()
     // redirect to profile page
+    document.location.replace('/');
   } else {
     // bootstrap alert for error
+    showErrorAlerts()
     // redirect to profile page
-    alert(response.statusText)
+    document.location.replace('/');
   }
+};
+
+function showEditPostAlerts(){
+  document.getElementById('bootstrap-alert-edit-post').style.display = 'block';
+  setTimeout(function(){document.getElementById('bootstrap-alert-edit-post').style.display = 'none'}, 1700);
+};
+  
+function showErrorAlerts(){
+  document.getElementById('bootstrap-alert-error').style.display = 'block';
+  setTimeout(function(){document.getElementById('bootstrap-alert-error').style.display = 'none'}, 1700);
 };
 
 document.querySelector("#edit-profile-form").addEventListener("submit", editProfile);
