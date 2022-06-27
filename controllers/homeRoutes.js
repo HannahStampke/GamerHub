@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Game, Post, Comment, Genre } = require("../models");
+const withAuth = require("../utils/auth")
 
 const Sequelize = require("sequelize")
 
@@ -86,10 +87,70 @@ router.get('/all-games', async (req, res) => {
     }
 });
 
+router.get('/new-post/:id', withAuth, async (req, res) => {
+    try {
+        const gameData = await Game.findByPk(req.params.id, {
+            include: [{
+                model: Genre
+            }]
+        });
+
+        const game = gameData.get({plain: true});
+
+        res.render('new-post',{game, logged_in: req.session.logged_in,})
+        
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
+
+router.get('/new-post', withAuth, async (req, res) => {
+    try {
+        const gameData = await Game.findAll();
+
+        const games = gameData.map(game => game.get({plain: true}))
+
+        res.render('new-game-post',{games, logged_in: req.session.logged_in,})
+        
+    } catch (error) {
+        console.log(error)
+        res.status(400).json(error)
+    }
+})
+
+router.get('/')
+
 
 router.get('/login', async (req, res) => {
     try {
         res.render('login', {logged_in: req.session.logged_in})
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
+
+router.get('/profile', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: {exclude: ['password']}
+        });
+
+        const postData = await Post.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
+            include: [
+                {
+                    model: Game
+                }
+            ]
+        })
+
+        const user = await userData.get({plain: true})
+        const posts = await postData.map((post) => post.get({plain: true}))
+
+
+        res.render('profile', {user, posts, logged_in: req.session.logged_in})
     } catch (error) {
         res.status(400).json(error)
     }

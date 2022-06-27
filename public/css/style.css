@@ -13,3 +13,15 @@
 .post-container{
     text-decoration: none;
 }
+
+.details{
+    color: rgb(0, 0, 0);
+}
+
+.hide{
+    display: none;
+}
+
+.game-card{
+    min-height: 318px;
+}

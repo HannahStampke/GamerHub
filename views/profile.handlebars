@@ -1,0 +1,106 @@
+      <div class="container">
+        <h2 class="text-center m-2">Your Profile</h2>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 col-12">
+            <div class="card text-center m-2" id="info-div">
+              <div
+                class="card-body d-flex flex-column align-content-center justify-content-center bg-secondary"
+              >
+                <h4 class="card-title">Your Information</h4>
+                <h5 class="card-text">Username: <span class="details">{{user.username}}</span> </h5>
+                <h5 class="card-text">Email: <span class="details">{{user.email}}</span> </h5>
+                <h5 class="card-text">Discord: <span class="details">{{user.discord_id}}</span></h5>
+                <h5 class="card-text">PSN: <span class="details">{{user.psn_id}}</span></h5>
+                <h5 class="card-text">XBOX: <span class="details">{{user.xbox_id}}</span></h5>
+                <button class="btn btn-success w-50 align-self-center" id="edit-profile" >Edit Profile</button>
+              </div>
+            </div>
+
+
+            {{!-- form to edit profile --}}
+            <div class="card text-center m-2 hide" id="form-div">
+            <div class="card-body d-flex flex-column align-content-center justify-content-center bg-secondary">
+            <form class="w-75 mx-auto my-3" id="edit-form">
+        <h1 class="h3 mb-3 fw-normal">Your Information</h1>
+
+        <div class="form-floating my-1">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="{{user.email}}"
+            value="{{user.email}}"
+            required
+          />
+          <label for="email">Email address</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="{{user.username}}"
+            value="{{user.username}}"
+            required
+          />
+          <label for="username">Username</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="discord_id"
+            placeholder="{{user.discord_id}}"
+            value="{{user.discord_id}}"
+          />
+          <label for="discord_id">Discord ID</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="psn_id"
+            placeholder="{{user.psn_id}}"
+            value="{{user.psn_id}}"
+          />
+          <label for="psn_id">Psn ID</label>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="xbox_id"
+            placeholder="{{user.xbox_id}}"
+            value="{{user.xbox_id}}"
+          />
+          <label for="xbox_id">XBox ID</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary my-3" type="submit">
+          Edit
+        </button>
+      </form>
+      </div>
+      
+      </div>
+
+
+          </div>
+          <div class="col-md-8 col-12">
+            <div class="row" id="post-row">
+                {{#each posts as |post|}}
+                {{> user-post}}
+                {{/each}}
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="/js/editProfile.js"></script>
+      {{#if posts}}
+      <script src="/js/deletePost.js"></script>
+      {{/if}}
+      

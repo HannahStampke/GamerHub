@@ -15,12 +15,12 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            showloginAlerts()
+            // showLoginAlerts()
         }
     }
 };
 
-function showloginAlerts(){
+const showLoginAlerts = async () => {
     document.getElementById('bootstrap-alert-login').style.display = 'block';
     setTimeout(function(){document.getElementById('bootstrap-alert-login').style.display = 'none'}, 1700);
 };
@@ -29,12 +29,11 @@ const signupFormHandler = async (event) => {
     event.preventDefault();
 
     // TODO: validate form with login form in login.handlebars
-    const username = document.querySelector('#name-signup').value.trim();
+    const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
     // TODO: Added extra const variables for signup information ... DEFINITELY NEED TO CHECK
-    const platform = document.querySelector('#platform').value.trim();
     const xbox_id = document.querySelector('#xbox-id').value.trim();
     const psn_id = document.querySelector('#psn-id').value.trim();
     const discord_id = document.querySelector('#discord-id').value.trim();
@@ -49,7 +48,7 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            showSignupAlerts()
+            // showSignupAlerts()
         }
     }
 };

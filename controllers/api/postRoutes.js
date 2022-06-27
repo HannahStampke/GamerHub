@@ -2,10 +2,17 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.post("/",  async (req, res) => {
+router.post("/",  withAuth, async (req, res) => {
   try {
-    const newPost = await Post.create(req.body
-    );
+    const newPost = await Post.create({
+      user_id: req.session.user_id,
+      post_text: req.body.post_text,
+      game_id: req.body.game_id,
+      platform_id: req.body.platform_id,
+      session_time: req.body.session_time,
+      gamer_level: req.body.gamer_level,
+      intensity: req.body.intensity
+    });
 
     res.status(201).json(newPost);
 
@@ -14,7 +21,7 @@ router.post("/",  async (req, res) => {
   }
 });
 
-router.delete("/:id",  async (req, res) => {
+router.delete("/:id",  withAuth, async (req, res) => {
   try {
     const deletedPost = await Post.destroy({
       where: { id: req.params.id },

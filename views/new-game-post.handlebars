@@ -1,0 +1,79 @@
+<div class="container">
+  <h2 class="text-center m-2">New Post</h2>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <form class="w-75 mx-auto my-3" id="create-post-form">
+        <div class="form-group my-1">
+          <label for="game-id">Select Game:</label>
+          <select class="form-control" id="game-id">
+            {{#each games as |game|}}
+            {{> game-option}}
+            {{/each}}            
+          </select>
+        </div>
+        <div class="form-floating my-1">
+          <input
+            type="text"
+            class="form-control"
+            id="post-text"
+            placeholder="Post Content"
+            required
+          />
+          <label for="post-text">Post Content*</label>
+        </div>
+        <div class="form-group my-1">
+          <label for="platform-id">Select Platform:</label>
+          <select class="form-control" id="platform-id">
+            <option>PC</option>
+            <option>Playstation</option>
+            <option>Xbox</option>
+            <option>Nintendo</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <label for="session-time">Date and Time</label>
+
+        <div class="form-floating my-1">
+          <input
+            type="datetime-local"
+            class="form-control"
+            id="session-time"
+            name="session-time"
+            value=""
+          />
+        </div>
+
+        <div class="form-group my-1">
+          <label for="gamer-level">Gamer Level:</label>
+          <select class="form-control" id="gamer-level">
+            <option>Casual</option>
+            <option>Intermediate</option>
+            <option>Semi-pro</option>
+            <option>Pro</option>
+          </select>
+        </div>
+        <div class="form-group my-1">
+          <label for="intensity">Intensity:</label>
+          <select class="form-control" id="intensity">
+            <option>Chill</option>
+            <option>Moderate</option>
+            <option>Sweaty</option>
+            <option>E-Sports</option>
+          </select>
+        </div>
+
+        <button
+          class="w-100 btn btn-lg btn-primary my-3 btn-success"
+          type="submit"
+        >
+          Post
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/createNewPost.js"></script>
