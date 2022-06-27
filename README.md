@@ -85,7 +85,7 @@ Test locally on [Insomnia](https://insomnia.rest/])
 - Express.js
 - JavaScript
 - CSS
-- SQL
+- MySQL
 
 
 # Questions 
@@ -98,7 +98,7 @@ For any questions and comments please reach out to us through email at:
 
 # Links
 To view our other projects visit:
--  [Damneet](https://github.com/daman29) 
+- [Damneet](https://github.com/daman29) 
 - [Tim](https://github.com/Tim-Adcoder)
 - [Hannah](https://github.com/HannahStampke)
 - [Damien](https://github.com/Djinksy)
