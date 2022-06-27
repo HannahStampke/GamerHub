@@ -19,18 +19,29 @@ const createPost = async () => {
             gamer_level: gamerLevel,
             intensity: intensity,
         }),
-    })
+    });
 
     if (response.ok) {
         // bootstrap alert user edited
-        // redirect to profile page
-    }
-    else {
+        showCreatePostAlerts();
+            // redirect to game page
+        document.location.replace(`/${game}`);
+    } else {
         // bootstrap alert for error
+        showErrorAlerts();
         // redirect to profile page
-        alert(response.statusText)
-    }
-    
-}
+        document.location.replace('/');
+    };
+};
+
+function showCreatePostAlerts(){
+    document.getElementById('bootstrap-alert-signup').style.display = 'block';
+    setTimeout(function(){document.getElementById('bootstrap-alert-signup').style.display = 'none'}, 1700);
+};
+
+function showErrorAlerts(){
+    document.getElementById('bootstrap-alert-error').style.display = 'block';
+    setTimeout(function(){document.getElementById('bootstrap-alert-error').style.display = 'none'}, 1700);
+};
 
 document.querySelector("#create-post-form").addEventListener("submit", createPost);
