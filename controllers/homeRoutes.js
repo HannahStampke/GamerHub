@@ -104,6 +104,20 @@ router.get('/new-post/:id', withAuth, async (req, res) => {
     }
 })
 
+router.get('/new-post', withAuth, async (req, res) => {
+    try {
+        const gameData = await Game.findAll();
+
+        const games = gameData.map(game => game.get({plain: true}))
+
+        res.render('new-game-post',{games, logged_in: req.session.logged_in,})
+        
+    } catch (error) {
+        console.log(error)
+        res.status(400).json(error)
+    }
+})
+
 router.get('/')
 
 
