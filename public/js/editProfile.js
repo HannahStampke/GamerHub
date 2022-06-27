@@ -7,8 +7,8 @@ const showEditForm = async (event) => {
   formBox.classList.remove("hide");
 };
 
-const editProfile = async (event) => {
-  event.preventDefault();
+const editProfile = async () => {
+
   const username = document.getElementById("username").value;
   const email = document.getElementById("email").value;
   const discord_id = document.getElementById("discord_id").value;

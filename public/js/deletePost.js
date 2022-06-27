@@ -52,7 +52,7 @@ function handleClick(event) {
 
   // Climb up the document tree from the target of the event
   while (element) {
-    if (element.nodeName === "BUTTON") {
+    if (element.nodeName === "BUTTON" && element.id === "delete-post") {
       // The user clicked on a <button> or clicked on an element inside a <button>
       // with a class name called "foo"
       deletePost(element);
