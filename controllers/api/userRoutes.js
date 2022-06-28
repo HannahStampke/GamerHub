@@ -35,8 +35,10 @@ router.get("/",  withAuth, async (req, res) => {
   }
 });
 
+// put route to edit logged in user requires auth
 router.put('/', withAuth, async (req, res) => {
   try {
+    // send information from the request to the database
     const user = await User.update(req.body, {
       where: { id: req.session.user_id },
     });
@@ -46,6 +48,7 @@ router.put('/', withAuth, async (req, res) => {
   }
 })
 
+// create new user route
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create({
@@ -69,6 +72,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// login route to check user data matches user in database
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -105,6 +109,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// logout route to destroy the user session
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

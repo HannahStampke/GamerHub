@@ -1,3 +1,4 @@
+// Import all seed files
 const platformSeeds = require('./platform-seeds');
 const userSeeds = require('./user-seeds');
 const gameSeeds = require('./game-seeds');
@@ -5,8 +6,10 @@ const postSeeds = require('./post-seeds');
 const commentSeeds = require('./comment-seeds');
 const genreSeeds = require('./genre-seeds');
 
+// get database connection
 const sequelize = require('../config/connection.js');
 
+// function to seed data to database
 const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('\n----- DATABASE SYNCED -----\n');

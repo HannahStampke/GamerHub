@@ -1,3 +1,4 @@
+// function to create new post from a game page
 const createPost = async (event) => {
   event.preventDefault();
   const postText = document.getElementById("post-text").value;
@@ -50,7 +51,7 @@ const createPost = async (event) => {
   if (response.ok) {
     // bootstrap alert user edited
     // showCreatePostAlerts();
-    // redirect to profile page
+    // redirect to game page
     document.location.replace(`/games/${gameId}`);
   } else {
     // bootstrap alert for error

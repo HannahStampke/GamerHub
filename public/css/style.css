@@ -21,7 +21,7 @@
 .hide{
     display: none;
 }
-
+/* give minimum height to the game cards so games with long names still render in the same sized card */
 .game-card{
     min-height: 318px;
 }

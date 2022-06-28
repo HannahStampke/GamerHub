@@ -1,11 +1,15 @@
+// login form function handle login form data
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
+    // get data from the front end
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
 
+    // if both email and password are provided then make server API call
     if (email && password) {
 
+        // server API post call
         const response = await fetch('/api/users/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
@@ -13,6 +17,7 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
+            // when logged in send user to homepage
             document.location.replace('/');
         } else {
             // showLoginAlerts()
@@ -25,6 +30,7 @@ const showLoginAlerts = async () => {
     setTimeout(function(){document.getElementById('bootstrap-alert-login').style.display = 'none'}, 1700);
 };
 
+// signup form handler function
 const signupFormHandler = async (event) => {
     event.preventDefault();
 

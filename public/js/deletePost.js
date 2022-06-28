@@ -36,8 +36,8 @@ function showErrorAlerts() {
   }, 1700);
 }
 
-// delete-post needs to be the the button name
 
+// if statement to assign event listeners to all dynamically loaded elements
 if (document.addEventListener) {
   document.addEventListener("click", handleClick, false);
 } else if (document.attachEvent) {
@@ -54,7 +54,9 @@ function handleClick(event) {
   while (element) {
     if (element.nodeName === "BUTTON" && element.id === "delete-post") {
       // The user clicked on a <button> or clicked on an element inside a <button>
-      // with a class name called "foo"
+      // with id "delete-post"
+
+      // if all criteria is met then delete the selected post
       deletePost(element);
       break;
     }

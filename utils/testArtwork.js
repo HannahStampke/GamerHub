@@ -1,1 +1,0 @@
-const getToken = require("./getToken");

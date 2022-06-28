@@ -2,6 +2,7 @@ const router = require("express").Router();
 const {Game} = require('../../models');
 const withAuth = require("../../utils/auth")
 
+// get all games route
 router.get("/", async (req, res) => {
     try {
         const games = await Game.findAll();
@@ -11,6 +12,7 @@ router.get("/", async (req, res) => {
     }
 });
 
+// create new game route
 router.post("/", withAuth, async (req, res) => {
     try {
         const game = await Game.create(req.body);

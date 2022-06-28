@@ -1,3 +1,4 @@
+// function to show the edit profile form only if the user clicks on the edit profile button
 const showEditForm = async (event) => {
   event.preventDefault();
   const profileBox = document.querySelector("#info-div");
@@ -7,14 +8,17 @@ const showEditForm = async (event) => {
   formBox.classList.remove("hide");
 };
 
+// function to edit profile of the user with the form data
 const editProfile = async () => {
 
+  // get all form data
   const username = document.getElementById("username").value;
   const email = document.getElementById("email").value;
   const discord_id = document.getElementById("discord_id").value;
   const psn_id = document.getElementById("psn_id").value;
   const xbox_id = document.getElementById("xbox_id").value;
 
+  // make API call to edit user profile
   const response = await fetch("/api/users", {
     method: "PUT",
     headers: {

@@ -1,6 +1,7 @@
 require("dotenv").config();
 const axios = require("axios");
 
+// get token method to get token from twitch to use in the games DB API calls
 const getToken = () => {
   return axios
     .post(
